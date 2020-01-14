@@ -1,0 +1,391 @@
+{% load static %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Appetizer Restaurant">
+    <meta name="author" content="A.K.">
+
+    <title>Restaurant Appetizer</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div class="py-1 bg-black top">
+    <div class="container">
+        <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+            <div class="col-lg-12 d-block">
+                <div class="row d-flex">
+                    <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
+                                class="icon-phone2"></span></div>
+                        <span class="text">+ 1235 2355 98</span>
+                    </div>
+                    <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
+                                class="icon-paper-plane"></span></div>
+                        <span class="text">youremail@email.com</span>
+                    </div>
+                    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+                        <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM - 9:00PM</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home_page' %}">Appetizer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="{% url 'home_page' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'about_url' %}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{% url 'menu_url' %}" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="{% url 'catering_url' %}" class="nav-link">Catering</a></li>
+                <li class="nav-item"><a href="{% url 'blog_url' %}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{% url 'contact_url' %}" class="nav-link">Contact</a></li>
+                <li class="nav-item cta"><a href="{% url 'reservation_url' %}" class="nav-link">Book table</a></li>
+                <li class="nav-item cta"><a href="#" class="nav-link"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END nav -->
+
+{% block content %}
+
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>Welcome to Appetizer restaurant</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-service bg-section" id="service">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <p>Famous for good food</p>
+                        <h4>our service</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row service-round-3 slideanim">
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round b-party">
+                        <i class="fa fa-4x fa fa-birthday-cake sr-icons"></i>
+                    </div>
+                    <h4>Birthday party</h4>
+                    <p>For more information please contact us.</p>
+                </div>
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round wedding">
+                        <i class="fa fa-4x fa fa-heart sr-icons"></i>
+                    </div>
+                    <h4>Wedding</h4>
+                    <p>For more information please contact us</p>
+                </div>
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round b-dinner">
+                        <i class="fa fa-4x fa fa-suitcase  sr-icons"></i>
+                    </div>
+                    <h4>Business dinner</h4>
+                    <p>For more information please contact us.</p>
+                </div>
+            </div>
+            <a href="{% url 'contact_url' %}" class="btn">Contact us</a>
+        </div>
+    </section>
+
+    <section id="gallery" class="bg-gallery no-padding">
+        <div class="container-fluid">
+            <h3>Gallery</h3>
+            <hr class="hr-h3s">
+            <div class="row no-gutter gallery slideanim">
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s1.jpg" class="img-fluid
+                        " alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s2.jpg"
+                             class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s3.jpg"
+                             class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s4.jpg"
+                             class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s5.jpg"
+                             class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#" class="portfolio-link">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-instagram fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952203/new/s6.jpg"
+                             class="img-fluid" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row more-img">
+
+                <div class="to-gallery">
+                    <h4>For more pictures visit us on</h4>
+                    <div class="social-networks">
+                        <a href="https://www.instagram.com" target="_blank" class="instagram"><i
+                                class="fa fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" class="facebook"><i
+                                class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-testimonials" id="testimonials">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <h4>What people say about us</h4>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr-testimonials">
+            <div class="row slideanim">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ul>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <h4>The atmosphere in restaurant is friendly, and the
+                                dishes are delicious.</h4>
+                            <h5>Mark Gross</h5>
+                        </div>
+
+                        <div class="carousel-item">
+                            <h4>Delicious meals, warm welcome, excellent service.</h4>
+                            <h5>Nina Hansen</h5>
+                        </div>
+
+                        <div class="carousel-item">
+                            <h4>Definitely my favourite restaurant, friendly, clean,
+                                delicious meals.</h4>
+                            <h5>Maria Fernandez</h5>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+<div class="footer-top">
+    <div class="container">
+        <div class="social-icons">
+            <i class="icon fa fa-twitter"></i>
+            <i class="icon fa fa-facebook"></i>
+            <i class="icon fa fa-google-plus"></i>
+            <i class="icon fa fa-instagram"></i>
+            <i class="icon fa fa-pinterest"></i>
+            <i class="icon fa fa-youtube-play"></i>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget subscribe no-box">
+                        <h5 class="widget-title">COMPANY NAME<span></span></h5>
+                        <p>About the company, little discription will goes here.. </p>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Quick Links<span></span></h5>
+                        <ul class="thumbnail-widget">
+                            <li>
+                                <div class="thumb-content"><a href="#.">Get Started</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">Top Leaders</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">Success Stories</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">Event/Tickets</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">News</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">Lifestyle</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#.">About</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Open Hours<span></span></h5>
+                        <ul>
+                            <li>Mon-Fri: 08:00-22:00</li>
+                            <li>Sat : 09:00-22:00</li>
+                            <li>Sun : 09:00-16:00</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Contact Us<span></span></h5>
+                        <address>
+                            <ul>
+                                <li>22, Northstreet Road</li>
+                                <li>Melbourne, Victoria</li>
+                                <li>Australia</li>
+                                <li><i class="fa fa-phone address"></i> +091 1234 5678</li>
+                                <li><i class="fa fa-fax address"></i> +876 5432 1234</li>
+                                <li><i class="fa fa-envelope address"></i> <a href="mailto:northstreet@gmail.com">northstreet@gmail.com</a>
+                                </li>
+                            </ul>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="footer-copyright">
+    <p>&copy 2020 Copyright by <a href="https://github.com/anttnew"> https://github.com/ValentynaLV</a></p>
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+
+</script>
+
+</body>
+
+</html>

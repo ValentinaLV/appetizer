@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="jumbotron jumbotron-menu">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>Our Delicious Menu</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-menu bg-section" id="menu">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <p>Famous for good food</p>
+                        <h4>our menu</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Nav pills -->
+
+                <ul class="nav nav-tabs menu_tab" role="tablist" style="margin-bottom: 80px">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#breakfast">Breakfast</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#lunch">Lunch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#dinner">Dinner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#dessert">Dessert</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#salads">Salads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#drinks">Drinks</a>
+                    </li>
+                </ul>
+
+
+                <!-- Tab panes -->
+                <div class="tab-content slideanim">
+                    <div id="breakfast" class="tab-pane fade show active">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_1.jpg' %}"
+                                         class="menu-img img-fluid" alt="breakfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="lunch" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                 <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_2.jpg' %}"
+                                         class="menu-img img-fluid" alt="brekfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dinner" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                 <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_4.jpg' %}"
+                                         class="menu-img img-fluid" alt="brekfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dessert" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_5.jpg' %}"
+                                         class="menu-img img-fluid" alt="brekfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="salads" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_3.jpg' %}"
+                                         class="menu-img img-fluid" alt="brekfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="drinks" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-sm-7">
+                                 <ul class="list-group">
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Spanish tortilla <span>$45</span></h4>
+                                            <p>potatoes, onion, olive oil, free-range eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Quick fish cakes <span>$45</span></h4>
+                                            <p>skinless cod, pollock fillets, Maris Piper,
+                                            flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Wild rice salad <span>$45</span></h4>
+                                            <p>mixed rice, wild and long-grain, mixed nuts,
+                                            fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Chicken milanese with spaghetti <span>$45</span></h4>
+                                            <p>cloves of garlic, fresh basil, olive oil, plum
+                                            tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs,
+                                            breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item single_our_menu_list">
+                                        <div class="menu_content">
+                                            <h4>Mango lassi <span>$45</span></h4>
+                                            <p>green cardamom pods , optional, ripe mangos,
+                                            low-fat natural yoghurt, ice cubes, runny honey</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="right-cover">
+                                    <img src="{% static 'img/dishes_6.jpg' %}"
+                                         class="menu-img img-fluid" alt="brekfast-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

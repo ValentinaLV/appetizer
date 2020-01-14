@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-booking">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>Make reservation</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-contact bg-section" id="contact">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <p>Famous for good food</p>
+                        <h4>book table</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row slideanim">
+                <div class="col-md-6 col-sm-6 contact-left">
+                    <div class="left-box">
+                        <address class="contact">
+                            <span class="span-contact">Call:</span>
+                            <br>
+                            +091 1234 5678
+                            <br>
+                            <span class="span-contact">Email:</span>
+                            <br>
+                            northstreet@gmail.com
+                            <br>
+                            <span class="span-contact">Visit:</span>
+                            <br>
+                            22, Northstreet Road
+                            <br>
+                            Melbourne, Victoria
+                            <br>
+                            Australia
+                        </address>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 contact-right">
+
+                    <form novalidate action="mailto:anttnew@gmmmail.com" name="frm" method="post">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="text" class="form-control" placeholder="Your Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Date</label>
+                                        <input type="date" class="form-control" id="book_date" placeholder="Date">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Time</label>
+                                        <input type="time" class="form-control" id="book_time" placeholder="Time">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Person</label>
+                                        <div class="select-wrap one-third">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Person</option>
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                                <option value="">4+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-3 contact-buttons pull-left">
+                                    <input type="submit" name="submit" value="Make a Reservation"/>
+                                    <input type="reset" value="Reset"/>
+                                </div>
+                            </div>
+                        </form>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
