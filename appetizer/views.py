@@ -21,8 +21,8 @@ def reservation(request):
     return render(request, 'reservation.html')
 
 
-def menu(request):
-    return render(request, 'menu.html')
+# def menu(request):
+#     return render(request, 'menu.html')
 
 
 def catering(request):

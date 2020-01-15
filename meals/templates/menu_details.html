@@ -1,0 +1,35 @@
+{% extends 'base_meal.html' %}
+
+{% block content %}
+
+    {% include 'includes/menu_header.html' %}
+
+    <section class="bg-menu bg-section" id="menu">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <p>Famous for good food</p>
+                        <h4>{{ meal.name|title }}</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div><img src="{{ meal.image.url }}" alt=""></div>
+                            <div>Price: ${{ meal.price }}</div>
+                            <div>For {{ meal.persons }} persons</div>
+                            <div>Ingredients: {{ meal.ingredients }}</div>
+                            <div>Preparation time: {{ meal.preparation_time }} minutes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
