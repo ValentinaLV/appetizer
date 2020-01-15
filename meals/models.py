@@ -16,6 +16,7 @@ class Meals(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     preparation_time = models.IntegerField()
     image = models.ImageField(upload_to='meals/')
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
     slug = models.SlugField(blank=True, null=True, unique=True)
 
     def get_absolute_url(self):
@@ -33,3 +34,14 @@ class Meals(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='meals/', null=True)
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return f"{self.name}"
