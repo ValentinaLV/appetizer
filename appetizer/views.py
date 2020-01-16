@@ -17,13 +17,5 @@ def contact_us(request):
     return render(request, 'contact_us.html')
 
 
-def reservation(request):
-    return render(request, 'reservation.html')
-
-
-# def menu(request):
-#     return render(request, 'menu.html')
-
-
 def catering(request):
     return render(request, 'catering.html')

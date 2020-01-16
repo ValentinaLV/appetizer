@@ -17,16 +17,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from appetizer.views import home_page, blog, contact_us, reservation, about_us, catering
+from appetizer.views import home_page, blog, contact_us, about_us, catering
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home_page'),
     path('meals/', include(('meals.urls', 'meals'), namespace='meals')),
+    path('reservation/', include(('reservation.urls', 'reservation'), namespace='reservation')),
+
 
     path('blog/', blog, name='blog_url'),
     path('contact/', contact_us, name='contact_url'),
-    path('reservation/', reservation, name='reservation_url'),
+    #path('reservation/', reservation, name='reservation_url'),
     # path('menu/', menu, name='menu_url'),
     path('about-us/', about_us, name='about_url'),
     path('catering/', catering, name='catering_url'),
