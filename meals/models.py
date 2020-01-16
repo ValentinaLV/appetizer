@@ -20,7 +20,7 @@ class Meals(models.Model):
     slug = models.SlugField(blank=True, null=True, unique=True)
 
     def get_absolute_url(self):
-        return reverse('meal_details_url', kwargs={'slug': self.slug})
+        return reverse('meals:meal_details_url', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.id:

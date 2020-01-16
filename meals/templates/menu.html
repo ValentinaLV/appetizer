@@ -41,7 +41,7 @@
                                                 <li class="list-group-item single_our_menu_list">
                                                     <div class="menu_content">
                                                         <h4>
-                                                            <a href="{% url 'meals:meal_details_url' meal.slug %}">{{ meal.name }}</a>
+                                                            <a href="{{ meal.get_absolute_url }}">{{ meal.name }}</a>
                                                             <span>${{ meal.price }}</span>
                                                         </h4>
                                                         <p>{{ meal.ingredients }}</p>
