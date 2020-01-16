@@ -13,9 +13,5 @@ def about_us(request):
     return render(request, 'about.html')
 
 
-def contact_us(request):
-    return render(request, 'contact_us.html')
-
-
 def catering(request):
     return render(request, 'catering.html')

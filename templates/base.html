@@ -87,7 +87,7 @@
                 <li class="nav-item"><a href="{% url 'meals:meal_list_url' %}" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="{% url 'catering_url' %}" class="nav-link">Catering</a></li>
                 <li class="nav-item"><a href="{% url 'blog_url' %}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{% url 'contact_url' %}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{% url 'contact:contact_us_url' %}" class="nav-link">Contact</a></li>
                 <li class="nav-item cta"><a href="{% url 'reservation:reserve_table_url' %}" class="nav-link">Book table</a></li>
                 <li class="nav-item cta"><a href="#" class="nav-link"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
@@ -142,7 +142,7 @@
                     <p>For more information please contact us.</p>
                 </div>
             </div>
-            <a href="{% url 'contact_url' %}" class="btn">Contact us</a>
+            <a href="{% url 'contact:contact_us_url' %}" class="btn">Contact us</a>
         </div>
     </section>
 
