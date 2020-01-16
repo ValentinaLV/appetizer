@@ -4,8 +4,11 @@ from .models import Post, Category, Tag
 
 def posts_list(request):
     posts = Post.objects.all()
+    categories = Category.objects.all()
+
     return render(request, 'blog.html', {
-        'posts': posts
+        'posts': posts,
+        'categories': categories
     })
 
 
