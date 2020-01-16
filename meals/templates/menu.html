@@ -23,7 +23,7 @@
                 <ul class="nav nav-tabs menu_tab" role="tablist" style="margin-bottom: 80px">
                     {% for category in categories %}
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>
+                            <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category|upper }}</a>
                         </li>
                     {% endfor %}
                 </ul>
