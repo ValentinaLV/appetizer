@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import View
+
 from .models import Post, Category, Tag
+from .utils import ObjectDetailMixin
 
 
 def posts_list(request):
@@ -19,5 +22,6 @@ def tags_list(request):
     })
 
 
-def post_details(request, slug):
-    pass
+class PostDetail(ObjectDetailMixin, View):
+    model = Post
+    template = 'post_details.html'

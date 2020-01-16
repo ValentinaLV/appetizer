@@ -24,6 +24,9 @@ class Post(models.Model):
             self.slug = get_slug(self.title)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('blog:post_details_url', kwargs={'slug': self.slug})
+
     def __str__(self):
         return f"{self.title}"
 
@@ -44,7 +47,7 @@ class Tag(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
 
     # def get_absolute_url(self):
-    #     return reverse('tag_details_url', kwargs={'slug': self.slug})
+    #     return reverse('blog:tag_details_url', kwargs={'slug': self.slug})
 
     def __str__(self):
         return f"{self.title}"

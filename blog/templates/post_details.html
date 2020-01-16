@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{#{% block title %}#}
+{#    {{ post.title }} - {{ block.super }}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <section>
+        <header class="header text-center">
+            <h1 class="header-h1">{{ post.title }}</h1>
+        </header>
+        <div class="background-bar"></div>
+        <section class="container-fluid main-body">
+            <section class="row">
+                <div class="hidden-xs col-sm-1 col-md-2"></div>
+                <div class="col-xs-12 col-sm-10 col-md-8">
+                    <div class="content-holder">
+                        <div class="content-description">
+
+                            <div class="author-name">
+                                <h3>Author: {{ post.author.first_name }} {{ post.author.last_name }}</h3>
+                            </div>
+                            <div class="row blog-info">
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="lead text-muted"><i class="fa fa-clock-o"></i>
+                                        Published: {{ post.created_date }}
+                                    </span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <span class="lead text-muted"><i class="fa fa-tags"></i>
+                                        {% for tag in post.tags.all %}
+                                            <span class="badge tag-badge-post-body">
+                                                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                                                    {{ tag.title }}
+                                                </a>
+                                            </span>
+                                        {% endfor %}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-body">
+                            <p>
+                            <blockquote>
+                                {{ post.content }}
+                            </blockquote>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-1 col-md-2"></div>
+            </section>
+        </section>
+    </section>
+{% endblock %}
