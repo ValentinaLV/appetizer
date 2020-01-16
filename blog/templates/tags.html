@@ -17,10 +17,10 @@
         </div>
     </div>
 
-    <div class="item-content-block tags">
+    <div class="item-content-block tags" style="text-align: center">
         {% for tag in tags %}
     	    <span class="badge tag-badge-details">
-                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                <a href="{{ tag.get_absolute_url }}" class="btn btn-default">
                     {{ tag.title }}
                 </a>
             </span>

@@ -12,7 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
     image = models.ImageField(upload_to='posts/', null=True)
-    slug = models.SlugField(max_length=150, blank=True, null=True)
+    slug = models.SlugField(max_length=150, blank=True, null=True, unique=True)
     tags = models.ManyToManyField('Tag', related_name='posts')
 
     class Meta:
@@ -46,8 +46,8 @@ class Tag(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
 
-    # def get_absolute_url(self):
-    #     return reverse('blog:tag_details_url', kwargs={'slug': self.slug})
+    def get_absolute_url(self):
+        return reverse('blog:tag_details_url', kwargs={'slug': self.slug})
 
     def __str__(self):
         return f"{self.title}"

@@ -25,3 +25,8 @@ def tags_list(request):
 class PostDetail(ObjectDetailMixin, View):
     model = Post
     template = 'post_details.html'
+
+
+class TagDetail(ObjectDetailMixin, View):
+    model = Tag
+    template = 'tag_details.html'
