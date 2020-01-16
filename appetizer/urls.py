@@ -25,7 +25,7 @@ urlpatterns = [
     path('meals/', include(('meals.urls', 'meals'), namespace='meals')),
     path('reservation/', include(('reservation.urls', 'reservation'), namespace='reservation')),
     path('contact_us/', include(('contact.urls', 'contact'), namespace='contact')),
-    #path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
+    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
 
 
     path('about-us/', about_us, name='about_url'),

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Tags
+{% endblock %}
+
+{% block content %}
+<div class="item">
+
+    <div class="jumbotron jumbotron-blog">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>#Tags</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-content-block tags">
+        {% for tag in tags %}
+    	    <span class="badge tag-badge-details">
+                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                    {{ tag.title }}
+                </a>
+            </span>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

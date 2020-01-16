@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-blog">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>Our News</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xl-12 text-center">
+                <div class="section-title text-center mb-60">
+
+                    <p style="margin-top: 50px">Famous for good food</p>
+                    <h4>Latest news</h4>
+                    <h4><a href="{% url 'blog:tags_list_url' %}">#Tags</a></h4>
+
+                    <div class="row">
+                        <div class="col-sm-10 col-md-10 offset-sm-1 text-center">
+                            <div class="info-form">
+                                <form action="" method="GET" class="form-inline justify-content-center">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="text" class="form-control" name="search"
+                                                   placeholder="Search...">
+                                        </label>
+                                        <button type="submit" class="btn btn-success" style="margin: 20px;">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Nav pills -->
+
+            <ul class="nav nav-tabs menu_tab" role="tablist" style="margin-bottom: 80px">
+                {#                {% for category in categories %}#}
+                <li class="nav-item">
+                    {#                        <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>#}
+                    <a class="nav-link" data-toggle="pill" href="#">Test1</a>
+                </li>
+                <li class="nav-item">
+                    {#                        <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>#}
+                    <a class="nav-link" data-toggle="pill" href="#">Test2</a>
+                </li>
+                {#                {% endfor %}#}
+            </ul>
+
+
+            {#            <!-- Tab panes -->#}
+            {#            <div class="tab-content slideanim">#}
+            {#                {% for category in categories %}#}
+            {#                    <div id="{{ category }}" class="tab-pane fade show">#}
+            {#                        <div class="row">#}
+            {#                            <div class="col-sm-7">#}
+            {#                                <ul class="list-group">#}
+            {#                                    {% for meal in meals %}#}
+            {#                                        {% if meal.category == category %}#}
+            {#                                            <li class="list-group-item single_our_menu_list">#}
+            {#                                                <div class="menu_content">#}
+            {#                                                    <h4>#}
+            {#                                                        <a href="{% url 'meals:meal_details_url' meal.slug %}">{{ meal.name }}</a>#}
+            {#                                                        <span>${{ meal.price }}</span>#}
+            {#                                                    </h4>#}
+            {#                                                    <p>{{ meal.ingredients }}</p>#}
+            {#                                                </div>#}
+            {#                                            </li>#}
+            {#                                        {% endif %}#}
+            {#                                    {% endfor %}#}
+            {#                                </ul>#}
+            {#                            </div>#}
+            {#                            <div class="col-sm-5">#}
+            {#                                <div class="right-cover">#}
+            {#                                    <img src="{{ category.image.url }}"#}
+            {#                                         class="menu-img img-fluid" alt="breakfast-img">#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                {% endfor %}#}
+            {#            </div>#}
+            {#        </div>#}
+            {#    </div>#}
+
+
+            <div class="col-sm-6 col-md-12 col-lg-12">
+                <div class="row">
+                    {% for post in posts %}
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <img src="{{ post.image.url }}"
+                                         alt="" class="img-thumbnail img-responsive">
+                                    <p class="text-muted">
+                                        <span class="glyphicon glyphicon-user" aria-hidden="true">By</span>
+                                        {{ post.author.first_name }} {{ post.author.last_name }}
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true">|</span>
+                                        {{ post.created_date }}
+                                        <span class="pull-right"><a href=""><i class="fa fa-comment"></i></a></span>
+                                    </p>
+                                    <h3>{{ post.title|truncatewords:6 }}</h3>
+                                    <p>{{ post.content|truncatewords:25 }}</p>
+                                    <a href="#" class="btn btn-default">View more...</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock %}
