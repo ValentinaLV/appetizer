@@ -2,8 +2,6 @@
 
 {% block content %}
 
-    <!-- Page Header -->
-
     <div class="jumbotron jumbotron-blog">
         <div class="container-fluid">
             <div class="header-content-inner">
@@ -14,82 +12,196 @@
         </div>
     </div>
 
-
-    <!-- Main Content -->
     <div class="container">
 
         <div class="row">
-            <div class="col-xl-12">
+
+            <div class="col-xl-12 text-center">
                 <div class="section-title text-center mb-60">
-                    <p>Famous for good food</p>
+
+                    <p style="margin-top: 50px">Famous for good food</p>
                     <h4>Latest news</h4>
+
+                    <div class="row">
+                        <div class="col-sm-10 col-md-10 offset-sm-1 text-center">
+                            <div class="info-form">
+                                <form action="" method="GET" class="form-inline justify-content-center">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="text" class="form-control" name="search"
+                                                   placeholder="Search...">
+                                        </label>
+                                        <button type="submit" class="btn btn-success" style="margin: 20px;">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on September 24, 2019</p>
+
+            <!-- Nav pills -->
+
+            <ul class="nav nav-tabs menu_tab" role="tablist" style="margin-bottom: 80px">
+{#                {% for category in categories %}#}
+                    <li class="nav-item">
+{#                        <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>#}
+                        <a class="nav-link" data-toggle="pill" href="#">Test1</a>
+                    </li>
+                 <li class="nav-item">
+{#                        <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>#}
+                        <a class="nav-link" data-toggle="pill" href="#">Test2</a>
+                    </li>
+{#                {% endfor %}#}
+            </ul>
+
+
+{#            <!-- Tab panes -->#}
+{#            <div class="tab-content slideanim">#}
+{#                {% for category in categories %}#}
+{#                    <div id="{{ category }}" class="tab-pane fade show">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-7">#}
+{#                                <ul class="list-group">#}
+{#                                    {% for meal in meals %}#}
+{#                                        {% if meal.category == category %}#}
+{#                                            <li class="list-group-item single_our_menu_list">#}
+{#                                                <div class="menu_content">#}
+{#                                                    <h4>#}
+{#                                                        <a href="{% url 'meals:meal_details_url' meal.slug %}">{{ meal.name }}</a>#}
+{#                                                        <span>${{ meal.price }}</span>#}
+{#                                                    </h4>#}
+{#                                                    <p>{{ meal.ingredients }}</p>#}
+{#                                                </div>#}
+{#                                            </li>#}
+{#                                        {% endif %}#}
+{#                                    {% endfor %}#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                            <div class="col-sm-5">#}
+{#                                <div class="right-cover">#}
+{#                                    <img src="{{ category.image.url }}"#}
+{#                                         class="menu-img img-fluid" alt="breakfast-img">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    </section>
+
+    <div class="col-sm-6 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true">By</span>
+                            Lorem Ipsum
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true">|</span>
+                            Jan/21/2018
+                            <span class="pull-right"><a href=""><i class="fa fa-comment"></i></a></span>
+                        </p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </div>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            I believe every human has a finite number of heartbeats. I don't intend to waste any of
-                            mine.
-                        </h2>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on September 18, 2019</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="https://images.pexels.com/photos/34601/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Jan/21/2018</p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </div>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on August 24, 2019</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <article class="panel-body">
+                        <img src="https://images.pexels.com/photos/459688/pexels-photo-459688.jpeg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Jan/21/2018</p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </article>
                 </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future
-                            generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by
-                        <a href="#">Start Bootstrap</a>
-                        on July 8, 2019</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <article class="panel-body">
+                        <img src="https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Jan/21/2018</p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </article>
                 </div>
-                <hr>
-                <!-- Pager -->
-                <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <article class="panel-body">
+                        <img src="https://images.pexels.com/photos/392018/pexels-photo-392018.jpeg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Jan/21/2018</p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </article>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="panel panel-default">
+                    <article class="panel-body">
+                        <img src="https://images.pexels.com/photos/301930/pexels-photo-301930.jpeg?h=350&auto=compress&cs=tinysrgb"
+                             alt="" class="img-thumbnail img-responsive">
+                        <p class="text-muted">By <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Lorem Ipsum | <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Jan/21/2018</p>
+                        <h3>Images by pexels.com</h3>
+                        <p>Nulla vehicula semper tellus, eleifend convallis dolor accumsan vitae. Donec diam lorem,
+                            vulputate eget pharetra at, laoreet ac augue. Vestibulum tellus justo, faucibus quis
+                            hendrerit sit amet, rutrum non nulla[...]</p>
+                        <a href="javascript: void(0);" class="btn btn-default">Read more...</a>
+                    </article>
                 </div>
             </div>
         </div>
+        <hr>
+    </div>
+    </div>
     </div>
 {% endblock %}

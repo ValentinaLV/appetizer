@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from appetizer.views import home_page, blog, about_us, catering
+from appetizer.views import home_page, about_us, catering
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,9 +25,9 @@ urlpatterns = [
     path('meals/', include(('meals.urls', 'meals'), namespace='meals')),
     path('reservation/', include(('reservation.urls', 'reservation'), namespace='reservation')),
     path('contact_us/', include(('contact.urls', 'contact'), namespace='contact')),
+    #path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
 
 
-    path('blog/', blog, name='blog_url'),
     path('about-us/', about_us, name='about_url'),
     path('catering/', catering, name='catering_url')
 ]
