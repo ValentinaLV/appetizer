@@ -1,9 +1,10 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 
 from .models import Post, Category, Tag
-from .utils import ObjectDetailMixin
+from .forms import CommentForm
+from .utils import ObjectDetailMixin, PostDetailMixin
 
 
 def posts_search(request):
@@ -35,6 +36,26 @@ def posts_categories(request):
     })
 
 
+def post_leave_comment(request, slug):
+    post_details = Post.objects.get(slug=slug)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.user = request.user
+            new_comment.post = post_details
+            new_comment.save()
+            return redirect('blog:post_details_url', slug=slug)
+    else:
+        comment_form = CommentForm()
+
+    return render(request, 'leave_comment.html', {
+        'post_details': post_details,
+        'form': comment_form
+    })
+
+
 def tags_list(request):
     tags = Tag.objects.all()
     return render(request, 'tags.html', {
@@ -42,7 +63,7 @@ def tags_list(request):
     })
 
 
-class PostDetail(ObjectDetailMixin, View):
+class PostDetail(PostDetailMixin, View):
     model = Post
     template = 'post_details.html'
 

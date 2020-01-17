@@ -27,6 +27,9 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog:post_details_url', kwargs={'slug': self.slug})
 
+    def get_comment_url(self):
+        return reverse('blog:post_leave_comment_url', kwargs={'slug': self.slug})
+
     def __str__(self):
         return f"{self.title}"
 
@@ -60,4 +63,4 @@ class Comment(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.post}"
+        return f"{self.content}"

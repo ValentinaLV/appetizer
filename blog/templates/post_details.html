@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+<meta name="csrf_token" content="{{ csrf_token }}">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 {#{% block title %}#}
@@ -31,7 +32,8 @@
                                     <span class="lead text-muted"><i class="fa fa-tags"></i>
                                         {% for tag in post.tags.all %}
                                             <span class="badge tag-badge-post-body">
-                                                <a href="{{ tag.get_absolute_url }}" class="link-badge" style="text-decoration: none;">
+                                                <a href="{{ tag.get_absolute_url }}" class="link-badge"
+                                                   style="text-decoration: none;">
                                                     {{ tag.title }}
                                                 </a>
                                             </span>
@@ -46,10 +48,34 @@
                                 {{ post.content }}
                             </blockquote>
                             </p>
+
+                            <div class="container">
+                                <h2 class="text-center" style="color: #FF5E18; margin-top: 50px; margin-bottom: 50px">Comments</h2>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            {% for comment in comments %}
+                                                <div class="col-md-2">
+                                                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg"
+                                                         class="img img-rounded img-fluid"/>
+                                                    <small class="text-secondary text-center">{{ comment.user.last_login }}</small>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <p>
+                                                        <strong>{{ comment.user.first_name }} {{ comment.user.last_name }}</strong>
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                    <p>{{ comment.content }}</p>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <a href="{{ post.get_comment_url }}" class="btn btn-default">Leave Comment</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="hidden-xs col-sm-1 col-md-2"></div>
             </section>
         </section>
     </section>

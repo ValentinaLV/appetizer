@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<meta name="csrf_token" content="{{ csrf_token }}">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{#{% block title %}#}
+{#    {{ post.title }} - {{ block.super }}#}
+{#{% endblock %}#}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center" style="color: #FF5E18; margin-top: 50px; margin-bottom: 50px">
+            Leave Comment
+        </h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="post" class="p-5 bg-light">
+                    {% csrf_token %}
+                    {% for field in form %}
+
+                        {{ field }}
+
+                    {% endfor %}
+                    <button type="submit" class="btn btn-default">Leave comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
