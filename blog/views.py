@@ -11,8 +11,9 @@ def posts_search(request):
     if search_query:
         posts = Post.objects.filter(
             Q(title__icontains=search_query) |
-            Q(content__icontains=search_query)
-        )
+            Q(content__icontains=search_query) |
+            Q(tags__title__icontains=search_query)
+        ).distinct()
     else:
         posts = Post.objects.all()
     return posts
