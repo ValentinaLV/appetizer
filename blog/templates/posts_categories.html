@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-blog">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>News Categories</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Nav pills -->
+
+            <ul class="nav nav-tabs menu_tab" role="tablist" style="margin-bottom: 80px; margin-top: 80px;">
+                {% for category in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#{{ category }}">{{ category }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="tab-content slideanim">
+                {% for category in categories %}
+                    <div id="{{ category }}" class="tab-pane fade show">
+                        <div class="col-sm-6 col-md-12 col-lg-12">
+                            <div class="row">
+                                {% for post in posts %}
+                                    {% if post.category == category %}
+                                        {% include 'includes/post_body_card.html' %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
