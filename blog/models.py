@@ -18,6 +18,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = "Post"
         verbose_name_plural = "Posts"
+        ordering = ['-created_date']
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -48,6 +49,9 @@ class Category(models.Model):
 class Tag(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ['title']
 
     def get_absolute_url(self):
         return reverse('blog:tag_details_url', kwargs={'slug': self.slug})

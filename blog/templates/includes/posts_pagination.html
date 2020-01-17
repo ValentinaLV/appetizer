@@ -1,0 +1,30 @@
+<nav>
+    <div class="paginator text-center">
+
+        <span class="page-item" style="{% if not prev_url %} opacity: 0.3; {% endif %}">
+            <a href="{{ prev_url }}" class="btn-default"><span aria-hidden="true">←</span> Newer Posts</a>
+        </span>
+
+        {% for n in page_obj.paginator.page_range %}
+
+            {% if page_obj.number == n %}
+                <span class="page-item">
+                    <a href="?page={{ n }}" class="btn-default"
+                       style="background-color: #ff8d1e; color: #ffffff;">{{ n }}</a>
+                </span>
+
+            {% elif n > page_obj.number|add:-2 and n < page_obj.number|add:2 %}
+                <span class="page-item">
+                    <a href="?page={{ n }}" class="btn-default">{{ n }}</a>
+                </span>
+            {% endif %}
+
+        {% endfor %}
+
+        <span class="page-item" style="{% if not next_url %} opacity: 0.3; {% endif %}">
+            <a href="{{ next_url }}" class="btn-default">Older Posts<span
+                    aria-hidden="true">→</span></a>
+        </span>
+
+    </div>
+</nav>

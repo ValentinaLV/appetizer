@@ -31,18 +31,7 @@
                     <div class="row">
                         <div class="col-sm-10 col-md-10 offset-sm-1 text-center">
                             <div class="info-form">
-                                <form action="{% url 'blog:posts_list_url' %}" method="GET"
-                                      class="form-inline justify-content-center">
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="text" class="form-control" name="search" value="{{ request.get.search }}"
-                                                   placeholder="Search...">
-                                        </label>
-                                        <button type="submit" class="btn btn-success" style="margin: 20px;">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </form>
+                                {% include 'includes/post_search.html' %}
                             </div>
                         </div>
                     </div>
@@ -53,11 +42,16 @@
         <div class="row">
             <div class="col-sm-6 col-md-12 col-lg-12">
                 <div class="row">
-                    {% for post in posts %}
+                    {% for post in page_obj.object_list %}
                         {% include 'includes/post_body_card.html' %}
                     {% endfor %}
                 </div>
                 <hr>
+                <div>
+                    {% if is_paginated %}
+                        {% include 'includes/posts_pagination.html' %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

@@ -1288,3 +1288,13 @@ ul.social-footer2 li a {
 }
 
 /*/end blog/post/<slug>*/
+
+.paginator {
+    margin: 50px 0;
+}
+
+.page-item a {
+    color: #FF5E18;
+    padding: 10px;
+    border: 1px solid #FF5E18;
+}

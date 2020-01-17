@@ -1,0 +1,14 @@
+
+<form action="{% url 'blog:posts_list_url' %}" method="GET"
+      class="form-inline justify-content-center">
+    <div class="form-group">
+        <label>
+            <input type="text" class="form-control" name="search"
+                   value="{{ request.get.search }}"
+                   placeholder="Search...">
+        </label>
+        <button type="submit" class="btn btn-success" style="margin: 20px;">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</form>
