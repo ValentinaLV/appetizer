@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 
+{% block header %}
+    <div class="jumbotron jumbotron-catering">
+        <div class="container-fluid">
+            <div class="header-content-inner">
+                <h1>Choose Our Service</h1>
+                <h3>We are proud of our long history of making delicious meals, warm and
+                    friendly atmosphere and professional staff.</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-
-    {% include 'includes/catering_header.html' %}
-
     <section class="menu_list mt-60 mb-60">
         <div class="container">
             <div class="row">
@@ -31,9 +40,10 @@
                     {% for category in categories %}
                         <div class="tab-pane fade" id="{{ category }}" role="tabpanel" aria-labelledby="breakfast-tab">
                             <div class="row">
-                                <div class="col-md-6">
-                                    {% for product in products %}
-                                        {% if product.category == category %}
+
+                                {% for product in products %}
+                                    {% if product.category == category %}
+                                        <div class="col-md-6">
                                             <div class="single_menu_list">
                                                 <img src="{{ product.image.url }}"
                                                      alt="">
@@ -43,15 +53,22 @@
                                                         <span>${{ product.price }}</span>
                                                     </h4>
                                                     <p>{{ product.description|truncatewords:12 }}</p>
-                                                    <a href="#">
-                                                        <button type="submit" class="btn btn-default">Add to cart
-                                                        </button>
-                                                    </a>
+
+                                                    {% if product.stock <= 0 %}
+                                                        <p><b>For now couldn't be prepared</b></p>
+                                                    {% else %}
+                                                        <a href="#">
+                                                            <button type="submit" class="btn btn-default">Add to cart
+                                                            </button>
+                                                        </a>
+                                                    {% endif %}
+
                                                 </div>
                                             </div>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+
                             </div>
                         </div>
                     {% endfor %}
