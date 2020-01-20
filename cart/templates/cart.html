@@ -41,7 +41,7 @@
                         <tr>
                             <td>
                                 <a href="{{ cart_items.product.get_absolute_url }}">
-                                    <img src="{{ cart_items.product.image.url }}" alt="">
+                                    <img src="{{ cart_item.product.image.url }}" alt="" style="width:4em; height:4em;">
                                 </a>
                             </td>
                             <td class="text-left">
@@ -59,19 +59,19 @@
                                     <a href="{% url 'cart:add_to_cart_url' cart_item.product.slug %}">
                                         <i class="fa fa-plus-circle"></i>
                                     </a>&nbsp;
-                                    <a href="#">
+                                    <a href="{% url 'cart:full_remove_from_cart_url' cart_item.product.slug %}">
                                         <i class="fa fa-trash"></i>
                                     </a>&nbsp;
-                                    <a href="#">
+                                    <a href="{% url 'cart:remove_from_cart_url' cart_item.product.slug %}">
                                         <i class="fa fa-minus-circle"></i>
                                     </a>
                                 </td>
                             {% else %}
                                 <td>
-                                    <a href="#">
+                                    <a href="{% url 'cart:full_remove_from_cart_url' cart_item.product.slug %}">
                                         <i class="fa fa-trash"></i>
                                     </a>&nbsp;
-                                    <a href="#">
+                                    <a href="{% url 'cart:remove_from_cart_url' cart_item.product.slug %}">
                                         <i class="fa fa-minus-circle"></i>
                                     </a>
                                 </td>

@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render, redirect, get_object_or_404
 
 from catering.models import CateringProduct
 from .models import Cart, CartItem
@@ -24,7 +24,8 @@ def add_to_cart(request, slug):
 
     try:
         cart_item = CartItem.objects.get(product=product, cart=cart)
-        cart_item.quantity += 1
+        if cart_item.quantity < cart_item.product.stock:
+            cart_item.quantity += 1
         cart_item.save()
     except CartItem.DoesNotExist:
         cart_item = CartItem.objects.create(
@@ -53,3 +54,21 @@ def cart_details(request, total=0, counter=0, cart_items=None):
     })
 
 
+def remove_from_cart(request, slug):
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    product = get_object_or_404(CateringProduct, slug=slug)
+    cart_item = CartItem.objects.get(product=product, cart=cart)
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+    return redirect('cart:cart_details_url')
+
+
+def full_remove_from_cart(request, slug):
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    product = get_object_or_404(CateringProduct, slug=slug)
+    cart_item = CartItem.objects.get(product=product, cart=cart)
+    cart_item.delete()
+    return redirect('cart:cart_details_url')
