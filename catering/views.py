@@ -9,7 +9,7 @@ def catering_products_list(request):
 
     return render(request, 'catering.html', {
         'products': products,
-        'categories': categories,
+        'categories': categories
     })
 
 
