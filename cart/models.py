@@ -16,7 +16,7 @@ class Cart(models.Model):
 class CartItem(models.Model):
     product = models.ForeignKey(CateringProduct, on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.PositiveIntegerField()
     active = models.BooleanField(default=True)
 
     def sub_total(self):
