@@ -34,6 +34,12 @@
                             <div>For: 4-5 persons</div>
                             <div>Preparation time: 24 hours</div>
 
+                            <a href="{% url 'cart:add_to_cart_url' product.slug %}">
+                                <button type="submit" class="btn btn-default">
+                                    Add to cart
+                                </button>
+                            </a>
+
                             {% if product.available %}
                                 <div>This dish <b>is available</b> for now.</div>
                             {% else %}
