@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from meals.models import get_slug
 
@@ -33,6 +34,9 @@ class CateringProduct(models.Model):
         ordering = ('name',)
         verbose_name = 'Catering Product'
         verbose_name_plural = 'Catering Products'
+
+    def get_absolute_url(self):
+        return reverse('catering:catering_product_details_url', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.id:

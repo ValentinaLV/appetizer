@@ -17,20 +17,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from appetizer.views import home_page, catering
+from appetizer.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page, name='home_page'),
+    path('', index, name='home_page'),
     path('meals/', include(('meals.urls', 'meals'), namespace='meals')),
     path('reservation/', include(('reservation.urls', 'reservation'), namespace='reservation')),
     path('contact_us/', include(('contact.urls', 'contact'), namespace='contact')),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
     path('about_us/', include(('about_us.urls', 'about_us'), namespace='about_us')),
-    #path('catering/', include(('catering.urls', 'catering'), namespace='catering')),
+    path('catering/', include(('catering.urls', 'catering'), namespace='catering')),
 
 
-    path('catering/', catering, name='catering_url')
 ]
 
 if settings.DEBUG:

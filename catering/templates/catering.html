@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include 'includes/catering_header.html' %}
+
+    <section class="menu_list mt-60 mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section-title text-center mb-60">
+                        <p>Famous for good food</p>
+                        <h4>order dishes</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <ul class="nav nav-tabs menu_tab" id="myTab" role="tablist">
+                    {% for category in categories %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="breakfast-tab" data-toggle="tab" href="#{{ category }}" role="tab"
+                               aria-selected="false">{{ category|upper }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="row">
+                <div class="tab-content col-xl-12" id="myTabContent">
+                    {% for category in categories %}
+                        <div class="tab-pane fade" id="{{ category }}" role="tabpanel" aria-labelledby="breakfast-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {% for product in products %}
+                                        {% if product.category == category %}
+                                            <div class="single_menu_list">
+                                                <img src="{{ product.image.url }}"
+                                                     alt="">
+                                                <div class="menu_content">
+                                                    <h4>
+                                                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                                                        <span>${{ product.price }}</span>
+                                                    </h4>
+                                                    <p>{{ product.description|truncatewords:12 }}</p>
+                                                    <a href="#">
+                                                        <button type="submit" class="btn btn-default">Add to cart
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="row">
+                        <div class="col-xl-12 text-center">
+                            <div>
+                                <a href="#" class="btn btn-view">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
