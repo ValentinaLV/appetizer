@@ -27,10 +27,12 @@ urlpatterns = [
     path('contact_us/', include(('contact.urls', 'contact'), namespace='contact')),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
     path('about_us/', include(('about_us.urls', 'about_us'), namespace='about_us')),
+    #path('catering/', include(('catering.urls', 'catering'), namespace='catering')),
 
 
     path('catering/', catering, name='catering_url')
 ]
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

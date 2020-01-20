@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'reservation',
     'contact',
     'blog',
-    'about_us'
+    'about_us',
+    'catering'
 ]
 
 MIDDLEWARE = [
