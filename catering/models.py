@@ -25,7 +25,7 @@ class CateringProduct(models.Model):
     category = models.ForeignKey(CateringCategory, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='catering_product/', null=True)
-    stock = models.IntegerField()
+    stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

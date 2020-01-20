@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Order is completed
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <h1>Thank You For Choosing Us</h1>
+            <hr>
+            <p>Your order has been successfully completed.</p>
+            <p>Our admin will connect with you...</p>
+            <p>Please click
+                <a href="{% url 'catering:catering_products_list_url' %}">
+                    to continue shopping</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

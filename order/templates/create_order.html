@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Your Shopping Cart| Checkout
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 6%">
+            <div class="col-md-8">
+                <h4 class="page-header">Checkout</h4>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}<br>
+                    <input type="submit" class="btn btn-primary" value="Submit order">
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="page-header">
+                    Your Order
+                </div>
+                <ul class="list-group">
+                    {% for cart_item in cart_items %}
+                        <li class="list-group-item">
+                            {{ cart_item.product.name }}
+                            {{ cart_item.quantity }} x {{ cart_item.product.price }}
+                            <span>{{ cart_item.sub_total }}</span>
+                        </li>
+                    {% endfor %}
+
+                <li class="list-group-item active">Total Cost: <strong>${{ total }}</strong></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

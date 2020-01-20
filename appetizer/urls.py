@@ -29,7 +29,7 @@ urlpatterns = [
     path('about_us/', include(('about_us.urls', 'about_us'), namespace='about_us')),
     path('catering/', include(('catering.urls', 'catering'), namespace='catering')),
     path('cart/', include(('cart.urls', 'cart'), namespace='cart')),
-    #path('order/', include(('order.urls', 'order'), namespace='order'))
+    path('order/', include(('order.urls', 'order'), namespace='order'))
 
 ]
 

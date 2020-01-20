@@ -40,10 +40,10 @@
                                 </button>
                             </a>
 
-                            {% if product.available %}
-                                <div>This dish <b>is available</b> for now.</div>
+                            {% if product.stock == 0 %}
+                                <div style="color: red">This dish <b>is not available</b> for now.</div>
                             {% else %}
-                                <div>This dish <b>is not available</b> for now.</div>
+                                <div style="color: green">This dish <b>is available</b> for now.</div>
                             {% endif %}
 
                         </div>
