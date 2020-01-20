@@ -1,14 +1,15 @@
 from django.db import models
 
+from meals.models import get_slug
+
 
 class CateringCategory(models.Model):
     name = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='catering_category/', null=True)
 
     class Meta:
-        ordering = ('name', )
+        ordering = ('name',)
         verbose_name = 'Catering Category'
         verbose_name_plural = 'Catering Categories'
 
@@ -29,6 +30,14 @@ class CateringProduct(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('name', )
+        ordering = ('name',)
         verbose_name = 'Catering Product'
         verbose_name_plural = 'Catering Products'
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = get_slug(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.name}'
