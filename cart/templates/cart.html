@@ -59,22 +59,22 @@
                                 {% if cart_item.quantity < cart_item.product.stock %}
                                     <td>
                                         <a href="{% url 'cart:add_to_cart_url' cart_item.product.slug %}">
-                                            <i class="fa fa-plus-circle"></i>
+                                            <i class="fa fa-plus-circle" style="color: #FF5E18"></i>
                                         </a>&nbsp;
                                         <a href="{% url 'cart:full_remove_from_cart_url' cart_item.product.slug %}">
-                                            <i class="fa fa-trash"></i>
+                                            <i class="fa fa-trash" style="color: #FF5E18"></i>
                                         </a>&nbsp;
                                         <a href="{% url 'cart:remove_from_cart_url' cart_item.product.slug %}">
-                                            <i class="fa fa-minus-circle"></i>
+                                            <i class="fa fa-minus-circle" style="color: #FF5E18"></i>
                                         </a>
                                     </td>
                                 {% else %}
                                     <td>
                                         <a href="{% url 'cart:full_remove_from_cart_url' cart_item.product.slug %}">
-                                            <i class="fa fa-trash"></i>
+                                            <i class="fa fa-trash" style="color: #FF5E18"></i>
                                         </a>&nbsp;
                                         <a href="{% url 'cart:remove_from_cart_url' cart_item.product.slug %}">
-                                            <i class="fa fa-minus-circle"></i>
+                                            <i class="fa fa-minus-circle" style="color: #FF5E18"></i>
                                         </a>
                                     </td>
                                 {% endif %}

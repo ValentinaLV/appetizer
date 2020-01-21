@@ -68,9 +68,19 @@
                                 <span class="text">youremail@email.com</span>
                             </div>
                             <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-                                <p class="mb-0 register-link"><span>Open hours:</span> <span>Monday - Sunday</span>
-                                    <span>8:00AM - 9:00PM</span>
-                                </p>
+                                <p class="mb-0 register-link"><span>MON - SUN</span>&nbsp;<span>8AM - 10PM</span></p>
+                                 {% if request.user.is_authenticated and request.user.first_name %}
+                                <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right pull-right">
+                                    <p class="mb-0 register-link">
+                                        <span><b>Welcome, <i class="fa fa-user"></i>{{ request.user.first_name }}</b></span>
+                                        <span>
+                                            <a href="{% url 'user:sign_out_url' %}">
+                                                <i class="fa fa-sign-out" style="color: #FF5E18"></i>
+                                            </a>
+                                        </span>
+                                    </p>
+                                </div>
+                            {% endif %}
                             </div>
                         </div>
                     </div>
@@ -100,14 +110,14 @@
 
                         {% if item_count > 0 %}
                             <li class="nav-item cta">
-                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link">
+                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link" style="color: #FF5E18">
                                     <i class="fa fa-shopping-cart"></i>
                                     &nbsp;({{ item_count }})
                                 </a>
                             </li>
                         {% else %}
                             <li class="nav-item cta">
-                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link">
+                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link" style="color: #FF5E18">
                                     <i class="fa fa-shopping-cart"></i>&nbsp;(0)
                                 </a>
                             </li>
@@ -126,6 +136,20 @@
                     <h1>Welcome to Appetizer restaurant</h1>
                     <h3>We are proud of our long history of making delicious meals, warm and
                         friendly atmosphere and professional staff.</h3>
+
+                    {% if not request.user.is_authenticated %}
+                        <div class="text-center" style="margin-top: 50px">
+                            <a href="{% url 'user:sign_up_url' %}" class="btn btn-default"
+                               style="display: inline-grid; background-color: #ff8d1e; color: #ffffff;">
+                                Create account
+                            </a>
+                            <a href="{% url 'user:sign_in_url' %}" class="btn btn-default"
+                               style="display: inline-grid; background-color: #ff8d1e; color: #ffffff;">
+                                Sign in
+                            </a>
+                        </div>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
