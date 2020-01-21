@@ -1322,3 +1322,96 @@ ul.social-footer2 li a {
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
 }
+
+.img-about-us {
+    width:170px;
+    height: 170px;
+}
+
+.site-main-color {
+    color: #FF5E18
+}
+
+.post-search-btn {
+    margin: 20px;
+}
+
+.btn-pagination {
+    background-color: #ff8d1e;
+    color: #ffffff;
+}
+
+.blog-m {
+    margin-top: 50px;
+}
+
+.p-details {
+    color: #FF5E18;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pd-section, .td-section {
+    padding: 0;
+}
+
+.pd-link {
+    text-decoration: none;
+}
+
+.pc-ul {
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.tags-center {
+    text-align: center;
+}
+
+.cart-btn {
+    display: grid;
+}
+
+.catering-red-txt {
+    color: red;
+}
+
+.catering-green-txt {
+    color: green;
+}
+
+.catering-img {
+    width:20em;
+    height:20em;
+}
+
+.contact-us-map {
+    height:300px;
+    width:100%;
+}
+
+.menu-mb {
+    margin-bottom: 80px;
+}
+
+.order-btn {
+    display: inline;
+}
+
+.order-bgc {
+    background-color: #182c39;
+}
+
+.order-row {
+    margin-top: 6%;
+}
+
+.order-lis-btn {
+    display: grid;
+}
+
+.base-btn {
+    display: inline-grid;
+    background-color: #ff8d1e;
+    color: #ffffff;
+}

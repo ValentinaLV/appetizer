@@ -59,7 +59,7 @@
                                                     <p>{{ product.description|truncatewords:12 }}</p>
 
                                                     {% if product.stock == 0 %}
-                                                        <p style="color: red"><b>For now couldn't be prepared</b></p>
+                                                        <p class="catering-red-txt"><b>For now couldn't be prepared</b></p>
                                                     {% else %}
                                                         <a href="{% url 'cart:add_to_cart_url' product.slug %}">
                                                             <button type="submit" class="btn btn-default">
