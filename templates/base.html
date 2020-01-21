@@ -124,15 +124,16 @@
 
                         {% if item_count > 0 %}
                             <li class="nav-item cta">
-                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link site-main-color">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    &nbsp;({{ item_count }})
+                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link">
+                                    <i class="fa fa-shopping-cart site-main-color"></i>
+                                    <span class="site-main-color">&nbsp;({{ item_count }})</span>
                                 </a>
                             </li>
                         {% else %}
                             <li class="nav-item cta">
-                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link site-main-color">
-                                    <i class="fa fa-shopping-cart"></i>&nbsp;(0)
+                                <a href="{% url 'cart:cart_details_url' %}" class="nav-link">
+                                    <i class="fa fa-shopping-cart site-main-color"></i>
+                                    <span class="site-main-color">&nbsp;(0)</span>
                                 </a>
                             </li>
                         {% endif %}
