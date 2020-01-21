@@ -1,4 +1,6 @@
+from math import fsum
 from django.db import models
+
 from catering.models import CateringProduct
 
 
@@ -18,12 +20,15 @@ class Order(models.Model):
     class Meta:
         ordering = ['-created']
 
+    def get_totals(self):
+        return fsum(order_item.sub_total() for order_item in self.items.all())
+
     def __str__(self):
         return f'{self.id}'
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(CateringProduct, related_name='order_items', on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='USD Price')
     quantity = models.PositiveIntegerField()

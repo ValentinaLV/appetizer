@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import OrderItem
+from django.contrib.auth.decorators import login_required
+
+from .models import Order, OrderItem
 from .forms import OrderCreateForm
 
 from cart.models import Cart, CartItem
@@ -45,3 +47,25 @@ def order_create(request, total=0):
         'cart_items': cart_items,
         'total': total
     })
+
+
+@login_required()
+def order_history(request):
+    if request.user.is_authenticated:
+        email = str(request.user.email)
+        orders = Order.objects.filter(email=email)
+        return render(request, 'orders_list.html', {
+            'orders': orders
+        })
+
+
+@login_required()
+def order_details(request, order_id):
+    if request.user.is_authenticated:
+        email = str(request.user.email)
+        order = Order.objects.get(id=order_id, email=email)
+        order_items = OrderItem.objects.filter(order=order)
+        return render(request, 'order_details.html', {
+            'order': order,
+            'order_items': order_items
+        })

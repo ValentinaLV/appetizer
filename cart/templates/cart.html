@@ -8,11 +8,11 @@
         <div class="container">
             <div class="text-center">
                 <hr>
-                <h1>Your shopping cart is empty</h1>
+                <h1>Your ordering cart is empty</h1>
                 <hr>
                 <p>Please click
                     <a href="{% url 'catering:catering_products_list_url' %}">
-                        to continue shopping</a>
+                        to continue ordering</a>
                 </p>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="container">
             <div class="text-center">
                 <hr>
-                <h1>Your shopping cart</h1>
+                <h1>Your ordering cart</h1>
                 <hr>
             </div>
         </div>
@@ -92,7 +92,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Please review your shopping cart items before proceeding with the order payment</td>
+                            <td>Please review your ordering cart items before proceeding with the order payment</td>
                         </tr>
                         <tr>
                             <td class="text-left">
@@ -105,7 +105,7 @@
                     <div class="mx-auto">
                         <a href="{% url 'catering:catering_products_list_url' %}" class="btn btn-default"
                            style="display: grid">
-                            Continue Shopping
+                            Continue Ordering
                         </a>
                         <a href="{% url 'order:order_create_url' %}" class="btn btn-default" style="display: grid">
                             Create Order

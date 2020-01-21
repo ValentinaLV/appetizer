@@ -57,30 +57,43 @@
                 <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
                     <div class="col-lg-12 d-block">
                         <div class="row d-flex">
-                            <div class="col-md pr-4 d-flex topper align-items-center">
-                                <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
-                                        class="icon-phone2"></span></div>
-                                <span class="text">+ 1235 2355 98</span>
+                            <div class="col-md-6 pr-4 d-flex topper align-items-center">
+                                <span class="text">
+                                    <i class="fa fa-phone"></i>&nbsp;+38063 123 5678
+                                </span>
+                                <span class="text">
+                                    &nbsp;<i class="fa fa-envelope"></i>&nbsp;appetizer@email.com
+                                </span>
+                                <p class="mb-0 register-link">
+                                    <span>&nbsp;<i class="fa fa-calendar">&nbsp;</i>MON - SUN</span>
+                                    <span>&nbsp;8AM - 10PM</span>
+                                </p>
                             </div>
-                            <div class="col-md pr-4 d-flex topper align-items-center">
-                                <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
-                                        class="icon-paper-plane"></span></div>
-                                <span class="text">youremail@email.com</span>
-                            </div>
-                            <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-                                <p class="mb-0 register-link"><span>MON - SUN</span>&nbsp;<span>8AM - 10PM</span></p>
-                                 {% if request.user.is_authenticated and request.user.first_name %}
-                                <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right pull-right">
-                                    <p class="mb-0 register-link">
-                                        <span><b>Welcome, <i class="fa fa-user"></i>{{ request.user.first_name }}</b></span>
-                                        <span>
-                                            <a href="{% url 'user:sign_out_url' %}">
-                                                <i class="fa fa-sign-out" style="color: #FF5E18"></i>
-                                            </a>
+                            <div class="col-md-6 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+                                {% if request.user.is_authenticated and request.user.first_name %}
+                                    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right pull-right">
+                                        <p class="mb-0 register-link">
+                                            <span>
+                                                <b>Welcome,&nbsp;<i class="fa fa-user">&nbsp;
+                                                </i>{{ request.user.first_name }}</b></span>
+                                            <span>
                                         </span>
-                                    </p>
-                                </div>
-                            {% endif %}
+                                        </p>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            Client Profile
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'order:order_history_url' %}">
+                                                Order History &nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                                            </a>
+                                            <a class="dropdown-item" href="{% url 'user:sign_out_url' %}">
+                                                Logout &nbsp;<i class="fa fa-sign-out" style="color: #FF5E18"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -414,9 +427,10 @@
                                 <li>22, Northstreet Road</li>
                                 <li>Melbourne, Victoria</li>
                                 <li>Australia</li>
-                                <li><i class="fa fa-phone address"></i> +091 1234 5678</li>
-                                <li><i class="fa fa-fax address"></i> +876 5432 1234</li>
-                                <li><i class="fa fa-envelope address"></i> <a href="mailto:northstreet@gmail.com">northstreet@gmail.com</a>
+                                <li><i class="fa fa-phone address"></i> +38063 123 5678</li>
+                                <li><i class="fa fa-fax address"></i> +38093 543 1234</li>
+                                <li><i class="fa fa-envelope address"></i>
+                                    <a href="mailto:appetizer@gmail.com">appetizer@gmail.com</a>
                                 </li>
                             </ul>
                         </address>

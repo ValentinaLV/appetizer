@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Orders History
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <h1>Orders History</h1>
+            <hr>
+            {% if orders %}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Order Date</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.created|date:"d M Y" }}</td>
+                            <td>{{ order.get_totals }}</td>
+                            <td><i class="fa fa-check"></i>&nbsp;Complete</td>
+                            <td><a href="{% url 'order:order_details_url' order.id %}">View order</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div>
+                    <p>You have not placed any orders yet.</p>
+                    <p>
+                        <a href="{% url 'catering:catering_products_list_url' %}" class="btn btn-default"
+                           style="display: grid">
+                            Continue Ordering
+                        </a>
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
