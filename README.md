@@ -1,7 +1,4 @@
 # appetizer
-restaurant with catering service
+Restaurant site with catering service
 
-# superuser
-Username: admin_appetizer
-Email address: admin@appetizer.com
-Password: AdminAppetizer
+Build by using Django 2 and Python 3
