@@ -12,6 +12,8 @@ Build by using Django 3 and Python 3
 
 https://appetizer-catering-service.herokuapp.com/
 
+# deploy project on your local machine
+
 1 - To deploy project on your local machine create new virtual environment and execute this command:
 
 `pip install -r requirements.txt`
