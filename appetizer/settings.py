@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
-#from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY
+from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '03firgkd50-26x0lol@p9xnd0s1t_7d=q$wp@-5r)8+5@k15=1'
+SECRET_KEY = SECRET_KEY_
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['appetizer-catering-service.herokuapp.com']
+#for heroku app
+#ALLOWED_HOSTS = ['appetizer-catering-service.herokuapp.com']
 
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -93,10 +95,10 @@ WSGI_APPLICATION = 'appetizer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'appetizer',
-        'USER': 'postgres',
-        'PASSWORD': 'Tinka140792',
-        'HOST': 'localhost',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }
@@ -139,7 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#for heroku app
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [
@@ -151,4 +155,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-django_heroku.settings(locals())
+#for heroku app
+#django_heroku.settings(locals())
