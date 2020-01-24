@@ -8,7 +8,7 @@ Build by using Django 3 and Python 3
 - Try to Register new user and Sign in for creation order and viewing orders history.
 Please notice, that your email in order should be the same as in registration form.
 
-https://appetizer-catering-service.herokuapp.com/
+https://appetizer-catering.herokuapp.com/
 
 # deploy project on your local machine
 

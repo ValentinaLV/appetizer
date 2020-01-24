@@ -28,7 +28,7 @@ DEBUG = True
 POSTS_PER_PAGES = 2
 
 #for heroku app
-ALLOWED_HOSTS = ['appetizer-catering-service.herokuapp.com']
+ALLOWED_HOSTS = ['appetizer-catering.herokuapp.com']
 
 #ALLOWED_HOSTS = []
 
