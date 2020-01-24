@@ -1,14 +1,12 @@
 # Appetizer
-#Restaurant site with catering service
+`Restaurant site with catering service`
 
 Build by using Django 3 and Python 3
 
 # deployed on Heroku Service (w/o images)
 
-- try user functionality after Sign in with next credentials:
-
-`Username: User_Appetizer`
-`Password: DjangoApp2020`
+- Try to Register new user and Sign in for creation order and viewing orders history.
+Please notice, that your email in order should be the same as in registration form.
 
 https://appetizer-catering-service.herokuapp.com/
 

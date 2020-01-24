@@ -6,6 +6,7 @@ from django.views.generic import View
 from .forms import CommentForm
 from .models import Post, Category, Tag
 from .utils import ObjectDetailMixin, PostDetailMixin
+from appetizer.settings import POSTS_PER_PAGES
 
 
 def posts_search(request):
@@ -22,8 +23,7 @@ def posts_search(request):
 
 
 def posts_pagination(request):
-    posts_per_page = 2
-    paginator = Paginator(posts_search(request), posts_per_page)
+    paginator = Paginator(posts_search(request), POSTS_PER_PAGES)
 
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)

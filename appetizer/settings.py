@@ -25,10 +25,12 @@ SECRET_KEY = SECRET_KEY_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#for heroku app
-#ALLOWED_HOSTS = ['appetizer-catering-service.herokuapp.com']
+POSTS_PER_PAGES = 2
 
-ALLOWED_HOSTS = []
+#for heroku app
+ALLOWED_HOSTS = ['appetizer-catering-service.herokuapp.com']
+
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -143,7 +145,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #for heroku app
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [
@@ -156,4 +158,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #for heroku app
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
