@@ -12,12 +12,12 @@ class Reservation(models.Model):
         ('More than six', '6+')
     ]
 
-    name = models.CharField(max_length=50, blank=False)
-    phone = models.CharField(max_length=15, blank=False)
-    email = models.EmailField(max_length=30)
-    number_of_persons = models.CharField(max_length=30, choices=NUMBER_OF_PERSONS, blank=False)
-    date = models.DateField(blank=False)
-    time = models.TimeField(blank=False)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField(max_length=100)
+    number_of_persons = models.CharField(max_length=30, choices=NUMBER_OF_PERSONS)
+    date = models.DateField()
+    time = models.TimeField()
 
     def __str__(self):
         return f"{self.name}"
