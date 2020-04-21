@@ -9,8 +9,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)  # 1 автор к множеству постов
+    category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)  # 1 категория к множеству постов
     image = models.ImageField(upload_to='posts/', null=True)
     slug = models.SlugField(max_length=150, blank=True, null=True, unique=True)
     tags = models.ManyToManyField('Tag', related_name='posts')
@@ -61,8 +61,8 @@ class Tag(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # 1 юзер - много комментов
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)  # 1 пост - много комментов
     content = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
 
